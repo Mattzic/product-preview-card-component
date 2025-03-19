@@ -1,0 +1,230 @@
+/* Reset */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin and padding in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100svh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-inline-size: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Design system */
+:root {
+  --color--black: #1c232b;
+  --color--grey: #6c7289;
+  --color--cream: #f2eae2;
+  --color--white: #fff;
+  --color--green-500: #3d8168;
+  --color--green-700: #1a4032;
+
+  --space--500: 2.5rem;
+  --space--400: 2rem;
+  --space--300: 1.5rem;
+  --space--200: 1rem;
+  --space--100: 0.5rem;
+  --space--50: 0.25rem;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--color--cream);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 5rem 0.8rem;
+}
+
+/* Product card */
+.product-card {
+  max-inline-size: 21.87rem;
+  background: var(--color--white);
+  border-radius: 8px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-info {
+  padding: var(--space--400);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space--300);
+}
+
+.merchandize-type {
+  color: var(--color--grey);
+
+  font-family: Montserrat;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 5px;
+}
+
+.main-title {
+  color: var(--color--black);
+  font-family: Fraunces;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.description {
+  color: var(--color--grey);
+  font-family: Montserrat;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.price {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--space--200);
+
+  color: var(--color--green-500);
+  font-family: Fraunces;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.sec-price {
+  color: var(--color--grey);
+  font-family: Montserrat;
+  font-size: 0.81rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration-line: strikethrough;
+}
+
+button {
+  border-radius: var(--space--100);
+  background: var(--color--green-500);
+  border: none;
+
+  display: flex;
+  padding: var(--space--200) var(--space--400);
+  justify-content: center;
+  align-items: center;
+  gap: var(--space--100);
+
+  color: var(--color-white, #fff);
+
+  font-family: Montserrat;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.1;
+
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--color--green-700);
+}
+
+/* Media queries */
+@media (min-width: 768px) {
+  .product-card {
+    flex-direction: row;
+    max-inline-size: 37.5rem;
+  }
+
+  .card-image {
+    flex: 1 0 18.75rem;
+  }
+}
